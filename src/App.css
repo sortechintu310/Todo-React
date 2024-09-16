@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --bg-color: #ffbd59;
+  --grey-dark: #373a40;
+  color: #64676c;
+}
+
+main{
+  height: 100vh;
+  background: url('/images/BG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.todo{
+  height: 90vh;
+  width: 40vw;
+  background-color: var(--bg-color);
+  border-radius: 20px;
+  box-shadow: -9px 10px 0px var(--grey-dark);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.tasks{
+  overflow: auto;
+}
+
+.heading{
+  font-size: 1.2rem;
+  font-weight: bolder;
+  color: white;
+  background-color: var(--grey-dark);
+  width: 90%;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+main,.heading{
+  display: grid;
+  place-items: center;
+}
+
+.lists{
+  width: 90%;
+  display: flex;
+  gap: .5rem;
+  justify-content: space-between;
+  padding: 5px 0px;
+}
+.lists li{
+  list-style: none;
+  padding: .5rem;
+  font-weight: bold;
+  background-color: white;
+  width: fit-content;
+  border-radius: 15px;
+}
+.lists div{
+  width: 90%;
+  border: 1.5px solid var(--grey-dark);
+  padding: .5rem;
+  border-radius: 15px;
+}
+.lists ul{
+  display: flex;
+  gap: .5rem;
+  overflow-x: auto;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 15px;
+}
+::-webkit-scrollbar {
+  height: .5rem;
+  width: .5rem;
+}
+::-webkit-scrollbar-track{
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #f5b555;
+  border-radius: 20px;
+}
+.addbtn,.addnewtodo .addnewbtn{
+  background-color: var(--grey-dark);
+  color: white;
+  padding: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform .1s ease;
+}
+
+.addbtn:hover,.addnewtodo .addnewbtn:hover{
+  transform: scale(1.1);
+}
+
+.tasks{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+  padding: 10px;
+}
+
+.todoitem{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todoitem button{
+  background-color: rgb(255, 50, 50);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.todotitle{
+  width: 70%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--grey-dark);
+  background-color: white;
+  border-radius: 5px;
+}
+
+input[type="text"]{
+  width: 60%;
+  padding: .6rem;
+  border: none;
+  outline: .15rem solid var(--grey-dark);
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+input[type="text"]:focus{
+  outline-offset: 0.2rem;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; 
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  background-color: white; 
+}
+
+input[type="checkbox"]:checked {
+  background-color: #4caf50; 
+  border: 2px solid #4caf50; 
+}
+
+input[type="checkbox"]:checked~.todotitle{
+  text-decoration: line-through;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+  top: 2px;
+  left: 6px;
+}
+
+.addnewtodo{
+  width: 90%;
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+
+.addnewtodo div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  transition: all 5 s ease;
+}
+
+.addnewtodo .addnewbtn{
+  font-weight: bold;
+  font-size: 1.3rem;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.date{
+  font-weight: 600;
+  color: #4d4d4d;
+}
+
+.addtolist{
+  position: absolute;
+  z-index: 10;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.413);
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  width: 30vw;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 1.2rem;
+  box-shadow: -9px 10px 0px var(--grey-dark);
+}
+.container div{
+  width: 100%;
+}
+.container h1{
+  font-size: 1.5rem;
+}
+.container input{
+  width: 80%;
+}
